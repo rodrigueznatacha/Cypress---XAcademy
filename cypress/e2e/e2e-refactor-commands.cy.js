@@ -16,7 +16,7 @@ describe('SauceDemo - Complete Purchase Flows', () => {
     // cy.wait(5000) 
 
     // Iniciar checkout
-    cy.CheckoutOrder('Juan','Dudoso','5000')
+    cy.checkoutOrder('Juan','Dudoso','5000')
     
     // Confirmar pedido
     cy.confirmOrder()
@@ -27,16 +27,16 @@ describe('SauceDemo - Complete Purchase Flows', () => {
 
     // Agregar dos productos
     cy.addToCart('sauce-labs-backpack')
-    cy.get('.shopping_cart_badge').should('have.text', '1')
+    cy.get('[data-test="shopping-cart-badge"]').should('have.text', '1')
     cy.addToCart('sauce-labs-bike-light')
-    cy.get('.shopping_cart_badge').should('have.text', '2')
-    
+    cy.get('[data-test="shopping-cart-badge"]').should('have.text', '2')
+
     // Ir al carrito
     cy.goToCart()
     cy.get('.cart_item').should('have.length', 2)
 
     // Iniciar checkout
-    cy.CheckoutOrder('Juan', 'Pérez', '5000')
+    cy.checkoutOrder('Juan', 'Pérez', '5000')
 
     // Confirmar pedido
     cy.confirmOrder()
@@ -54,7 +54,7 @@ describe('SauceDemo - Complete Purchase Flows', () => {
     
     //ir al carrito y checkout 
     cy.goToCart()
-    cy.CheckoutOrder('Juan', 'Pérez', '5000')
+    cy.checkoutOrder('Juan', 'Pérez', '5000')
     cy.confirmOrder()
 
     // Logout 

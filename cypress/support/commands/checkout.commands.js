@@ -2,7 +2,7 @@
 // Formulario, pasos de pago y confirmaciones
 //************************************************
 
-Cypress.Commands.add('CheckoutOrder',(firstname, lastName, postalCode)=>{
+Cypress.Commands.add('checkoutOrder',(firstname, lastName, postalCode)=>{
     cy.get('[data-test="checkout"]').click()
     cy.url().should('include', '/checkout-step-one.html')  
     cy.get('[data-test="firstName"]').type(firstname)
