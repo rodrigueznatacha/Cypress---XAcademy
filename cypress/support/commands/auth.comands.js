@@ -9,3 +9,9 @@ Cypress.Commands.add('login',(user, pass)=>{
     cy.get('[data-test="login-button"]').click()
     cy.url().should('include', '/inventory.html')
 })
+
+Cypress.Commands.add('logout',()=>{
+    cy.get('#react-burger-menu-btn').click()
+    cy.get('#logout_sidebar_link').should('be.visible').click()
+    cy.url().should('eq', 'https://www.saucedemo.com/')
+})
