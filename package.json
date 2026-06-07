@@ -1,5 +1,15 @@
 {
-	"devDependencies": {
-		"cypress": "^15.15.0"
-	}
+  "name": "cypress-xacademy",
+  "version": "1.0.0",
+  "description": "Automatización de pruebas con Cypress y Reporte de Bugs en Trello para SauceDemo",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress run",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run"
+  },
+  "devDependencies": {
+    "cypress": "^15.15.0"
+  }
 }
+
